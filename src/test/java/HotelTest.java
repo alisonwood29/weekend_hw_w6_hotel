@@ -71,6 +71,21 @@ public class HotelTest {
         assertEquals(0, conferenceRoom.guestCount());
     }
 
+//    @Test
+//    public void canSeeGuestsInRoom(){
+//        hotel.checkIn(guest, bedroom);
+//        String[] expected = {guest.getName()};
+//        assertEquals(1, bedroom.guestCount());
+//        assertEquals(expected, hotel.getGuestsNames(bedroom));
+//
+//    }
+
+    @Test
+    public void canSeeGuestsInRoom(){
+        hotel.checkIn(guest, bedroom);
+        assertEquals("Alison", hotel.getGuest(bedroom));
+    }
+
 
 
 

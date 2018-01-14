@@ -41,9 +41,23 @@ public class Hotel {
         room.removeGuest(guest);
     }
 
+    public String getGuest(Bedroom bedroom) {
+        return bedroom.getGuestName();
+    }
+
+//    public String[] getGuestsNames(Bedroom bedroom) {
+//        String[] result;
+//        for(Guest guest: bedroom.getGuests()){
+//           result = guest.getName();
+//        }
+//        return result;
+//    }
+
 //    public void checkOut(Room room){
 //        room.removeAllGuests();
 //    }
+
+
 
 
 }
