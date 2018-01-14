@@ -29,7 +29,7 @@ public class Hotel {
         this.bedrooms.add(bedroom);
     }
 
-    public void addConferenceRooms(ConferenceRoom conferenceRoom) {
+    public void addConferenceRoom(ConferenceRoom conferenceRoom) {
         this.conferenceRooms.add(conferenceRoom);
     }
 
@@ -69,7 +69,13 @@ public class Hotel {
     }
 
 
-
-
-
+    public String checkVacantConferenceRooms() {
+        String result = null;
+        for(ConferenceRoom conferenceRoom: this.conferenceRooms){
+            if(conferenceRoom.guestCount() == 0){
+                result = conferenceRoom.getName();
+            }
+        }
+        return result;
+    }
 }
