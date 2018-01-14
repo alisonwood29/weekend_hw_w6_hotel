@@ -50,18 +50,18 @@ public class RoomTest {
         assertEquals(0, room.guestCount());
     }
 
-    @Test
-    public void canGetGuestName(){
-        room.addGuest(guest);
-        assertEquals("Alison", room.getGuestName());
-    }
-
 //    @Test
-//    public void canGetCopyOfGuestNames(){
-//        ArrayList<Guest> nameCopy = room.getGuests();
-//        boolean expected = guests.equals(nameCopy);
-//        assertEquals(true, expected);
+//    public void canGetGuestName(){
+//        room.addGuest(guest);
+//        assertEquals("Alison", room.getGuestName());
 //    }
+
+    @Test
+    public void canGetCopyOfGuestNames(){
+        ArrayList<Guest> nameCopy = room.getGuests();
+        boolean expected = guests.equals(nameCopy);
+        assertEquals(true, expected);
+    }
 //    I kept changing this around a bit but not sure if it is actually working. Maybe need a bit of clarification on what the copy method is doing!
 
 }

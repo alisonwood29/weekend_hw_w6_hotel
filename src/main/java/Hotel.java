@@ -41,21 +41,33 @@ public class Hotel {
         room.removeGuest(guest);
     }
 
-    public String getGuest(Bedroom bedroom) {
-        return bedroom.getGuestName();
+    public String getGuestsNames(Bedroom bedroom) {
+        ArrayList<Guest> guestsCopy = new ArrayList<>(bedroom.getGuests());
+        String result = null;
+        for(Guest guest: guestsCopy){
+            result = guest.getName();
+        }
+        return result;
     }
 
-//    public String[] getGuestsNames(Bedroom bedroom) {
-//        String[] result;
-//        for(Guest guest: bedroom.getGuests()){
-//           result = guest.getName();
-//        }
-//        return result;
+
+//    Still not really understanding loops. Got it working but what is the line String result = null doing? A default value?
+
+
+//    public String getGuest(Bedroom bedroom) {
+//        return bedroom.getGuestName();
 //    }
 
-//    public void checkOut(Room room){
-//        room.removeAllGuests();
-//    }
+    public int checkVacantBedrooms() {
+        int result = 0;
+        for(Bedroom bedroom: this.bedrooms){
+            if(bedroom.guestCount() == 0){
+                result = bedroom.getRoomNumber();
+            }
+        }
+        return result;
+    }
+
 
 
 

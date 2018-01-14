@@ -35,12 +35,12 @@ public class Room {
         this.guests.clear();
     }
 
-    public String getGuestName() {
-        return this.guests.get(0).getName();
-    }
-
-//    public ArrayList<Guest> getGuests() {
-//        ArrayList<Guest> guestsCopy = new ArrayList<>(this.guests);
-//        return guestsCopy;
+//    public String getGuestName() {
+//        return this.guests.get(0).getName();
 //    }
+
+    public ArrayList<Guest> getGuests() {
+        ArrayList<Guest> guestsCopy = new ArrayList<>(this.guests);
+        return guestsCopy;
+    }
 }
