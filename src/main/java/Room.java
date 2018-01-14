@@ -8,6 +8,7 @@ public class Room {
     public Room(int capacity){
         this.capacity = capacity;
         this.guests = new ArrayList<>();
+
     }
 
 //    public Room() {
@@ -34,13 +35,18 @@ public class Room {
         this.guests.clear();
     }
 
-    public String getGuestName() {
-        String result = null;
-        for(Guest guest: guests){
-           result = guest.getName();
-        }
-        return result;
-//        return this.guests.get(0).getName();
+//    public String getGuestName() {
+//        String result = null;
+//        for(Guest guest: guests){
+//           result = guest.getName();
+//        }
+//        return result;
+////        return this.guests.get(0).getName();
+//
+//    }
 
+    public ArrayList<Guest> getGuests() {
+        ArrayList<Guest> guestsCopy = new ArrayList<>(this.guests);
+        return guestsCopy;
     }
 }

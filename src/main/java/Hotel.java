@@ -44,4 +44,6 @@ public class Hotel {
 //    public void checkOut(Room room){
 //        room.removeAllGuests();
 //    }
+
+
 }

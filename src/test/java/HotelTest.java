@@ -71,13 +71,6 @@ public class HotelTest {
         assertEquals(0, conferenceRoom.guestCount());
     }
 
-//    @Test
-//    public void canCheckOutGuestFromConferenceRoom(){
-//        hotel.checkIn(guest, conferenceRoom);
-//        hotel.checkOut(conferenceRoom);
-//        assertEquals(0, conferenceRoom.guestCount());
-//    }
-
 
 
 
