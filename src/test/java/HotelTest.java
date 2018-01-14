@@ -20,6 +20,9 @@ public class HotelTest {
         bedroom2 = new Bedroom( 2, Type.DOUBLE, 100);
         conferenceRoom = new ConferenceRoom("Italian Room", 12, 150);
         guest = new Guest("Alison");
+//        hotel.addBedroom(bedroom);
+//        hotel.addBedroom(bedroom2);
+//        realised when doing test to check for vacant rooms that i hadn't added the rooms to the hotels. doing it here broke my other tests so commented out but now not sure my other tests are actually working properly!
     }
 
     @Test
