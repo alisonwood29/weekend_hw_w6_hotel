@@ -41,13 +41,16 @@ public class Hotel {
         room.removeGuest(guest);
     }
 
-    public String getGuestsNames(Bedroom bedroom) {
+    public ArrayList<String> getGuestsNames(Bedroom bedroom) {
         ArrayList<Guest> guestsCopy = new ArrayList<>(bedroom.getGuests());
-        String result = null;
+         ArrayList<String> guestNames = new ArrayList<>();
+//        String result = "";
         for(Guest guest: guestsCopy){
-            result = guest.getName();
+            guestNames.add(guest.getName());
+//            result = guest.getName();
         }
-        return result;
+//        return result;
+        return guestNames;
     }
 
 
@@ -58,24 +61,25 @@ public class Hotel {
 //        return bedroom.getGuestName();
 //    }
 
-    public int checkVacantBedrooms() {
-        int result = 0;
+    public ArrayList<Integer> checkVacantBedrooms() {
+        ArrayList<Integer> roomNumbers = new ArrayList<>();
+//        this initializes a new arrayList so that we can add things to it
         for(Bedroom bedroom: this.bedrooms){
             if(bedroom.guestCount() == 0){
-                result = bedroom.getRoomNumber();
+                roomNumbers.add(bedroom.getRoomNumber());
             }
         }
-        return result;
+        return roomNumbers;
     }
 
 
-    public String checkVacantConferenceRooms() {
-        String result = null;
+    public ArrayList<String> checkVacantConferenceRooms() {
+        ArrayList<String> conferenceRoomNames = new ArrayList<>();
         for(ConferenceRoom conferenceRoom: this.conferenceRooms){
             if(conferenceRoom.guestCount() == 0){
-                result = conferenceRoom.getName();
+                 conferenceRoomNames.add(conferenceRoom.getName());
             }
         }
-        return result;
+        return conferenceRoomNames;
     }
 }

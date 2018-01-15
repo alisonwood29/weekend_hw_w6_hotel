@@ -40,7 +40,8 @@ public class Room {
 //    }
 
     public ArrayList<Guest> getGuests() {
-        ArrayList<Guest> guestsCopy = new ArrayList<>(this.guests);
-        return guestsCopy;
+//        ArrayList<Guest> guestsCopy = new ArrayList<>(this.guests);
+//        return guestsCopy;
+       return this.guests;
     }
 }

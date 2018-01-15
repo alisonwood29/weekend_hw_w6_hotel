@@ -9,11 +9,11 @@ public class RoomTest {
 
     Room room;
     Guest guest;
-    ArrayList<Guest> guests;
+//    ArrayList<Guest> guests;
 
     @Before
     public void before(){
-        guests = new ArrayList<>();
+//        guests = new ArrayList<>();
         guest = new Guest("Alison");
         room = new Room(2);
     }
@@ -58,6 +58,7 @@ public class RoomTest {
 
     @Test
     public void canGetCopyOfGuestNames(){
+        room.addGuest(guest);
         ArrayList<Guest> nameCopy = room.getGuests();
         boolean expected = guests.equals(nameCopy);
         assertEquals(true, expected);

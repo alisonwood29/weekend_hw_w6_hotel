@@ -10,6 +10,7 @@ public class HotelTest {
     Hotel hotel;
     Bedroom bedroom;
     Bedroom bedroom2;
+    Bedroom bedroom3;
     ConferenceRoom conferenceRoom;
     Guest guest;
 
@@ -18,11 +19,14 @@ public class HotelTest {
         hotel = new Hotel("Prestonfield" );
         bedroom = new Bedroom( 1, Type.DOUBLE, 100);
         bedroom2 = new Bedroom( 2, Type.DOUBLE, 100);
+        bedroom3 = new Bedroom( 3, Type.DOUBLE, 100);
         conferenceRoom = new ConferenceRoom("Italian Room", 12, 150);
         guest = new Guest("Alison");
+
 //        hotel.addBedroom(bedroom);
 //        hotel.addBedroom(bedroom2);
 //        realised when doing test to check for vacant rooms that i hadn't added the rooms to the hotels. doing it here broke my other tests so commented out but now not sure my other tests are actually working properly!
+//        would make an empty hotel as above and then create another hotel that has rooms in it and test that.
     }
 
     @Test
@@ -70,6 +74,7 @@ public class HotelTest {
         hotel.checkOut(guest, bedroom);
         assertEquals(0, bedroom.guestCount());
     }
+//    this bedroom is not actually in the hotel so a better test would be to check the number of guests in the hotel rather than in the bedroom
 
     @Test
     public void canCheckOutGuestFromConferenceRoom(){
@@ -81,35 +86,35 @@ public class HotelTest {
 //    @Test
 //    public void canSeeGuestsInRoom(){
 //        hotel.checkIn(guest, bedroom);
-//        String[] expected = {guest.getName()};
-//        assertEquals(1, bedroom.guestCount());
-//        assertEquals(expected, hotel.getGuestsNames(bedroom));
-//    }
-
-//    @Test
-//    public void canSeeGuestsInRoom(){
-//        hotel.checkIn(guest, bedroom);
 //        assertEquals("Alison", hotel.getGuest(bedroom));
 //    }
 
     @Test
     public void canGetCopyOfGuestsInRoom(){
        hotel.checkIn(guest, bedroom);
-        assertEquals("Alison", hotel.getGuestsNames(bedroom));
+       ArrayList<String> expected = new ArrayList<>();
+       expected.add("Alison");
+       assertEquals(expected, hotel.getGuestsNames(bedroom));
     }
 
     @Test
     public void canSeeVacantBedrooms(){
         hotel.addBedroom(bedroom);
         hotel.addBedroom(bedroom2);
+        hotel.addBedroom(bedroom3);
         hotel.checkIn(guest, bedroom);
-        assertEquals(2, hotel.checkVacantBedrooms());
+        ArrayList<Integer> expected = new ArrayList<>();
+        expected.add(2);
+        expected.add(3);
+        assertEquals(expected, hotel.checkVacantBedrooms());
     }
 
     @Test
     public void canSeeVacantBedConferenceRooms(){
         hotel.addConferenceRoom(conferenceRoom);
-        assertEquals("Italian Room", hotel.checkVacantConferenceRooms());
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("Italian Room");
+        assertEquals(expected, hotel.checkVacantConferenceRooms());
     }
 
 
